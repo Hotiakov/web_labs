@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url("../fonts/OpenSans-Light.woff2"), url("../fonts/OpenSans-Light.woff");
+    font-weight: 300;
+    font-display: swap;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url("../fonts/OpenSans-Regular.woff2"), url("../fonts/OpenSans-Regular.woff");
+    font-weight: 400;
+    font-display: swap;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url("../fonts/OpenSans-Bold.woff2"), url("../fonts/OpenSans-Bold.woff");
+    font-weight: 600;
+    font-display: swap;
+    font-style: normal;
+}
+
+.container{
+    min-width: 100vw;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bookForm{
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 700px;
+    padding: 10px 30px;
+    border: 5px solid #8d4e12;
+    background-color: rgb(255, 163, 87);
+}
+
+.bookForm-wrapper{
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.bookForm-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1 0 50%;
+}
+
+h2{
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.bookForm__label{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 35px;
+    font-size: 15px;
+}
+
+.bookForm__input{
+    width: 230px;
+    padding: 5px 10px;
+    margin-top: 7px;
+    outline: none;
+    border: 2px solid #8d4e12;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #fff;
+    background-color: rgb(201, 115, 46);
+}
+input:read-only{
+    color: rgb(190, 189, 189);
+    background-color: rgb(141, 81, 33);
+}
+
+.btn{
+    width: 230px;
+    font-size: 16px;
+    padding: 6px 0;    
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    box-sizing: border-box;
+}
+
+.action-btn{
+    transition: 0.3s all;
+}
+.action-btn:hover{
+    border: 2px solid #8d4e12;
+    background-color: transparent;
+    color: #fff;
+}
+
+#return{
+    background-color: rgb(255, 163, 87);
+    color: #fff;
+    text-align: center;
+    transition: 0.3s all;
+}
+#return:hover{
+    border: 2px solid #8d4e12;
+    background-color: transparent;
+    color: #000;
+}
+
+#cancel{
+    margin-top: 10px;
+    padding: 0;
+    width: auto;
+    background-color: transparent;
+    color: #fff;
+}
+#cancel:hover{
+    text-decoration: underline;
+}
+
+#return{
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.d-none{
+    display: none;
+}

@@ -1,0 +1,80 @@
+[
+    {
+        "name":"Собачье сердце",
+        "author":"М.А. Булгаков",
+        "releaseDate":"1925 г.",
+        "inLibrary":"yes",
+        "id":"_qcrzngtc1"
+    },
+    {
+        "name":"Медный всадник",
+        "author":"А.С. Пушкин",
+        "releaseDate":"1837 г.",
+        "inLibrary":"no",
+        "readerName": "Eugene",
+        "returnDate": "08.10.2021",
+        "id":"_l3x4osqlu"
+    },
+    {
+        "name":"Преступление и наказание",
+        "author":"Ф.М. Достоевский",
+        "releaseDate":"1866 г.",
+        "inLibrary":"yes",
+        "id":"_tekxcsrgi"
+    },
+    {
+        "name":"Герой нашего времени",
+        "author":"М.Ю. Лермонтов",
+        "releaseDate":"1840 г.",
+        "inLibrary":"no",
+        "readerName": "Genya",
+        "returnDate": "09.11.2021",
+        "id":"_v0j8e36mt"
+    },
+    {
+        "name":"Мёртвые души",
+        "author":"Н.В. Гоголь",
+        "releaseDate":"1842 г.",
+        "inLibrary":"yes",
+        "id":"_4n95ijn3h"
+    },
+    {
+        "name":"Дубровский",
+        "author":"А.С. Пушкин",
+        "releaseDate":"1841 г.",
+        "inLibrary":"yes",  
+        "id":"_f3hyys1l5"
+    },
+    {
+        "name":"Имя Ветра",
+        "author":"Патрик Ротфусс",
+        "releaseDate":"2007 г.",
+        "inLibrary":"no",
+        "readerName": "Eugene",
+        "returnDate": "12.07.2221",
+        "id":"_4m7fmr29v"
+    },
+    {
+        "name":"Алмазный меч, деревянный меч",
+        "author":"Ник Перумов",
+        "releaseDate":"1998 г.",
+        "inLibrary":"yes",
+        "id":"_tbwyzehws"
+    },
+    {
+        "name":"Странствия мага",
+        "author":"Ник Перумов",
+        "releaseDate":"2000 г.",
+        "inLibrary":"yes",
+        "id":"_ernl1zgrn"
+    },
+    {
+        "name":"Война мага: Миттельшпиль",
+        "author":"Ник Перумов",
+        "releaseDate":"2003 г.",
+        "inLibrary":"no",
+        "readerName": "Евгений",
+        "returnDate": "10.10.2021",
+        "id":"_e4con9uxw"
+    }
+]

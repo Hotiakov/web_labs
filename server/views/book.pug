@@ -1,0 +1,51 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="../public/styles/book.css")
+        link(rel="stylesheet", href="../public/styles/modal.css")
+        title= title
+    body 
+        .container
+            h2.title= book.name
+            form#bookForm.bookForm
+                .bookForm-wrapper
+                    .bookForm__info.bookForm-content
+                        label.bookForm__label Название книги
+                            input.bookForm__input(name="name" type="text" value=`${book.name}` required)
+                        label.bookForm__label Автор книги
+                            input.bookForm__input(name="author" type="text" value=`${book.author}` required)
+                        label.bookForm__label Дата издания
+                            input.bookForm__input(name="releaseDate" type="text" value=`${book.releaseDate}` required)
+                    .bookForm__reader.bookForm-content
+                        label.bookForm__label Наличие
+                            input.bookForm__input(name="inLibrary" type="text" value=`${book.inLibrary}` readonly)
+                        label.bookForm__label Имя читателя
+                            input.bookForm__input(name="readerName" type="text" value=`${book.readerName || ""}` readonly)
+                        label.bookForm__label Дата крайнего срока возврата книги
+                            input.bookForm__input(name="returnDate" type="text" value=`${book.returnDate || ""}` readonly)
+                        .button-wrapper
+                            button.btn#giveBook.action-btn(style={'display': book.inLibrary === "yes" ? "block" : "none" }) Взять книгу
+                            button.btn#returnBook.action-btn(style={'display': book.inLibrary === "no" ? "block" : "none" }) Вернуть книгу
+                button.btn#refresh.action-btn(type="submit") Сохранить изменения
+                button.btn#cancel Отменить изменения
+            a.btn#return(href="/") Вернуться к библиотеке
+        #modal.modal__overlay
+            .modal
+                button.button.button__close
+                span.svg_ui
+                    svg.icon__close
+                    use(xlink:href='../public/img/sprite.svg#close_modal')
+                h3.modal__header Добавение читателя
+                form.modal__form
+                    label.label.modal__label
+                        input#name.input.input__type.modal__input(name='readerName' type='text' placeholder='Имя читателя*' required)
+                    label.label.modal__label
+                        input#author.input.input__name.modal__input(name='returnDate' type='text' placeholder='Дата возврата книги*' required)
+                    button.button.button-ui_firm.modal__btn(type='submit')
+                        span Сохранить
+                    button.button.cancel-button.modal__btn
+                        span Отмена
+        script(src="../public/script/book.js") 

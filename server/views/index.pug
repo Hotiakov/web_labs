@@ -1,0 +1,90 @@
+doctype html
+html(lang="ru")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="../public/styles/preloader.css")
+        link(rel="stylesheet", href="../public/styles/index.css")
+        link(rel="stylesheet", href="../public/styles/modal.css")
+        title Библиотека
+    body 
+        .preloader
+            .preloader__row
+                .preloader__item
+                .preloader__item
+        main.main
+            .container#container 
+                h1.title-page Библиотека книг
+                label Выберите значение для фильтра
+                    select#filterType(name="filterType")
+                        option(value="all" selected = selectedFilter === "all") Без фильтра
+                        option(value="availability" selected = selectedFilter === "availability") Наличие
+                        option(value="returnDate" selected = selectedFilter === "returnDate") Дата возврата
+                        option(value="expired" selected = selectedFilter === "expired") Дата возврата просрочена
+                .table__wrapper
+                    table.table#table 
+                        thead      
+                            tr
+                                th.table-th.th-id
+                                    | ID
+                                th.table-th.th-author 
+                                    | Автор
+                                th.table-th.th-name 
+                                    | Название произведения
+                                th.table-th.th-relese 
+                                    | Дата выпуска
+                                th.table-th.th-availability 
+                                    | Наличие
+                                th.table-th.th-return 
+                                    | Дата возврата
+                                th.table-th.th-handler 
+                                    | Действия
+                        tbody
+                            each book in dbArray
+                                tr.table__row
+                                    td.table__id.table__cell= book.id
+                                    td.table-author.table__cell= book.author
+                                    td.table-name.table__cell= book.name
+                                    td.table-release.table__cell= book.releaseDate
+                                    td.table-availability.table__cell= book.inLibrary
+                                    if book.inLibrary === "no" && book.returnDate
+                                        td.table-return.table__cell= book.returnDate
+                                    else 
+                                        td.table-return.table__cell --
+                                    td.table__cell
+                                        .table__actions
+                                            //- button.button.action-change
+                                            //-     span.svg_ui
+                                            //-         svg.action-icon_change
+                                            //-             use(xlink:href='../public/img/sprite.svg#change')
+                                            //-     span Выдать
+                                            button.button.action-remove
+                                                span.svg_ui
+                                                    svg.action-icon_remove
+                                                        use(xlink:href='../public/img/sprite.svg#remove')
+                                                span Удалить
+            button.button.btn-addItem
+                span.svg_ui
+                    svg.icon-btn-addItem
+                        use(xlink:href='../public/img/sprite.svg#plus')
+                    span Добавить книгу
+        #modal.modal__overlay
+            .modal
+                button.button.button__close
+                span.svg_ui
+                    svg.icon__close
+                    use(xlink:href='../public/img/sprite.svg#close_modal')
+                h3.modal__header Добавение новой книги
+                form
+                    label.label
+                        input#name.input.input__type(name='name' type='text' placeholder='Название книги*' required)
+                    label.label
+                        input#author.input.input__name(name='author' type='text' placeholder='Автор книги*' required)
+                    label.label
+                        input#releaseData.input.input__units(name='releaseDate' type='text' placeholder='Дата издания*' required)
+                    button.button.button-ui_firm(type='submit')
+                        span Сохранить
+                    button.button.cancel-button
+                        span Отмена
+        script(src="../public/script/index.js") 
